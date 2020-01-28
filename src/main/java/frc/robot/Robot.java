@@ -10,6 +10,13 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+
+
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -17,10 +24,21 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
  * the package after creating this project, you must also update the build.gradle file in the
  * project.
  */
-public class Robot extends TimedRobot {
+public class Robot extends TimedRobot 
+{
   private Command m_autonomousCommand;
 
   private RobotContainer m_robotContainer;
+
+  private DifferentialDrive m_myRobot;
+  private Joystick m_leftStick;
+  private Joystick m_rightStick;
+  private static final int leftDeviceID = 1; 
+  private static final int rightDeviceID = 2;
+  private CANSparkMax m_leftMotor;
+  private CANSparkMax m_rightMotor;
+
+
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -31,6 +49,17 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
+    m_leftMotor      = new CANSparkMax(leftDeviceID, MotorType.kBrushless);
+    m_rightMotor     = new CANSparkMax(rightDeviceID, MotorType.kBrushless);
+
+    m_leftMotor.restoreFactoryDefaults();
+    m_rightMotor.restoreFactoryDefaults();
+
+    m_myRobot    = new DifferentialDrive(m_leftMotor, m_rightMotor);
+
+    m_leftStick  = new Joystick(0);
+    m_rightStick = new Joystick(1);
+
   }
 
   /**
@@ -95,7 +124,9 @@ public class Robot extends TimedRobot {
    * This function is called periodically during operator control.
    */
   @Override
-  public void teleopPeriodic() {
+  public void teleopPeriodic() 
+  {
+    m_myRobot.tankDrive(m_leftStick.getY(), m_rightStick.getY());
   }
 
   @Override
