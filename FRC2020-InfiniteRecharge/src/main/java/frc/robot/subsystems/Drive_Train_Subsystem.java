@@ -8,17 +8,12 @@
 package frc.robot.subsystems;
 
 import frc.robot.Constants;
-import frc.robot.RobotContainer;
 
 // import for tank drive
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import edu.wpi.first.wpilibj.SpeedController;
+
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
-import frc.robot.commands.ExampleCommand;
-import edu.wpi.first.wpilibj.smartdashboard.*;
-import frc.robot.commands.Tank_Drive_Command;
-import edu.wpi.first.wpilibj.MotorSafety;
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
