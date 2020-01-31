@@ -16,7 +16,8 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-    //Joystick port
+    /*CONTROLER */ 
+  //Joystick port
   public static int JoystickPort = 0;
 
   //spark motor PWM ID
@@ -35,9 +36,9 @@ public final class Constants {
   public static int MotorR3ID = 4;
 
   //letter buttons on right
-  public static int ButtonX = 1;
-  public static int ButtonA = 2;
-  public static int ButtonB = 3;
+  public static int ButtonA = 1;
+  public static int ButtonB = 2;
+  public static int ButtonX = 3;
   public static int ButtonY = 4;
 
   //trigger IDs
@@ -58,4 +59,3 @@ public final class Constants {
   public static int LeftJoystickID = 1;  
   public static int RightJoystickID = 5;
 }
-
