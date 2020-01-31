@@ -17,7 +17,7 @@ import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import frc.robot.commands.ExampleCommand;
 import edu.wpi.first.wpilibj.smartdashboard.*;
-import frc.robot.commands.TankDriveCommand;
+import frc.robot.commands.Tank_Drive_Command;
 import edu.wpi.first.wpilibj.MotorSafety;
 
 import com.revrobotics.CANSparkMax;
@@ -26,7 +26,7 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 public class Drive_Train_Subsystem extends SubsystemBase {
   private CANSparkMax MotorR1, MotorR2, MotorR3, MotorL1, MotorL2, MotorL3;
 
-  public DifferentialDrive m_myRobot;
+  public DifferentialDrive diffDrive;
   private SpeedControllerGroup leftMotor, rightMotor;
   
   // Create 6 motors for drivetrain
@@ -42,7 +42,7 @@ public class Drive_Train_Subsystem extends SubsystemBase {
     
     leftMotor = new SpeedControllerGroup(MotorL1, MotorL2, MotorL3);
     rightMotor = new SpeedControllerGroup(MotorR2, MotorR3);
-    m_myRobot = new DifferentialDrive(leftMotor, rightMotor);
+    diffDrive = new DifferentialDrive(leftMotor, rightMotor);
   }
 
   public void driveOff()
@@ -58,6 +58,6 @@ public class Drive_Train_Subsystem extends SubsystemBase {
 
   public void tankDrive(double speedL, double speedR)
   {
-    m_myRobot.tankDrive(speedL, speedR);
+    diffDrive.tankDrive(speedL, speedR);
   }
 }

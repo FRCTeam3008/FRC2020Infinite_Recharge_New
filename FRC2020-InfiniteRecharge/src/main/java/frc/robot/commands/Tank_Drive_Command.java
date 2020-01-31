@@ -6,14 +6,14 @@ import frc.robot.Constants;
 import frc.robot.Robot;
 import frc.robot.RobotContainer;
 
-public class TankDriveCommand extends CommandBase {
+public class Tank_Drive_Command extends CommandBase {
   /**
-   * Creates a new TankDriveCommand.
+   * Creates a new Tank_Drive_Command.
    */
   public double stickL, stickR;
-  public TankDriveCommand() {
+  public Tank_Drive_Command() {
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(RobotContainer.m_drive);
+    addRequirements(RobotContainer.DriveTrain);
   }
 
 
@@ -22,7 +22,7 @@ public class TankDriveCommand extends CommandBase {
   public void execute() {
     stickL = RobotContainer.getLeftStickY();
     stickR = RobotContainer.getRightStickY();
-    RobotContainer.m_drive.tankDrive(stickL, stickR);
+    RobotContainer.DriveTrain.tankDrive(stickL, stickR);
   }
 
   // Returns true when the command should end.
