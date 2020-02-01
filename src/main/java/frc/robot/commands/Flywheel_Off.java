@@ -16,6 +16,7 @@ public class Flywheel_Off extends CommandBase {
    */
   public Flywheel_Off() {
     // Use addRequirements() here to declare subsystem dependencies.
+    addRequirements(RobotContainer.Flywheel);
   }
 
   // Called when the command is initially scheduled.

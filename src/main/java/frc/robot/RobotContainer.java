@@ -18,6 +18,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Drive_Train_Subsystem;
 import frc.robot.subsystems.Flywheel_Subsystem;
 import frc.robot.subsystems.Hook_Subsystem;
+import frc.robot.subsystems.Intake_Subsystem;
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -33,6 +34,8 @@ public class RobotContainer {
   public static Drive_Train_Subsystem DriveTrain;
   public static Flywheel_Subsystem Flywheel;
   public static Hook_Subsystem Hook;
+  public static Intake_Subsystem Intake;
+
 
 
 
@@ -46,6 +49,8 @@ public class RobotContainer {
     DriveTrain = new Drive_Train_Subsystem();
     Hook       = new Hook_Subsystem();
     Flywheel   = new Flywheel_Subsystem();
+    Intake     = new Intake_Subsystem();
+
 
     // Configure the button bindings
     configureButtonBindings();

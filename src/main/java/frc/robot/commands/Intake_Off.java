@@ -11,13 +11,13 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 
 
-public class Flywheel_On extends CommandBase {
+public class Intake_Off extends CommandBase {
   /**
-   * Creates a new Flywheel_On.
+   * Creates a new Intake_On.
    */
-  public Flywheel_On() {
+  public Intake_Off() {
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(RobotContainer.Flywheel);
+    addRequirements(RobotContainer.Intake);
 
   }
 
@@ -30,8 +30,7 @@ public class Flywheel_On extends CommandBase {
   @Override
   public void execute() 
   {
-    RobotContainer.Flywheel.flywheelOn();
-
+    RobotContainer.Intake.intakeOff();
   }
 
   // Called once the command ends or is interrupted.

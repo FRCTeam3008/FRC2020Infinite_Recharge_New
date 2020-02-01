@@ -12,40 +12,30 @@ import frc.robot.Constants;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
-
-public class Hook_Subsystem extends SubsystemBase {
+public class Intake_Subsystem extends SubsystemBase {
   /**
-   * Creates a new Hook_Subsystem.
+   * Creates a new Intake.
    */
-  private CANSparkMax HookR;
-  private CANSparkMax HookL;
-
-  public Hook_Subsystem() 
+  private CANSparkMax IntakeR;
+  private CANSparkMax IntakeL;
+   public Intake_Subsystem() 
   {
-    HookL = new CANSparkMax(Constants.Spark11ID, MotorType.kBrushless);
-    HookR = new CANSparkMax(Constants.Spark12ID, MotorType.kBrushless);
+    IntakeL = new CANSparkMax(Constants.Spark7ID, MotorType.kBrushless);
+    IntakeR = new CANSparkMax(Constants.Spark8ID, MotorType.kBrushless);
 
   }
 
-
-  public void hookRelease()
+  public void intakeOff()
   {
+    IntakeL.set(0.0);
+    IntakeR.set(0.0);
   }
 
-  public void winchForward()
+  public void intakeOn()
   {
+    IntakeL.set(1.0);
+    IntakeR.set(1.0);
   }
-
-  public void winchOff()
-  {
-    HookL.set(0.0);
-    HookR.set(0.0);
-  }
-
-  public void winchReverse()
-  {
-  }
-
 
   @Override
   public void periodic() {

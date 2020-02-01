@@ -8,17 +8,13 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.RobotContainer;
 
-
-public class Flywheel_On extends CommandBase {
+public class Intake_On extends CommandBase {
   /**
-   * Creates a new Flywheel_On.
+   * Creates a new Intake_On.
    */
-  public Flywheel_On() {
+  public Intake_On() {
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(RobotContainer.Flywheel);
-
   }
 
   // Called when the command is initially scheduled.
@@ -28,10 +24,7 @@ public class Flywheel_On extends CommandBase {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() 
-  {
-    RobotContainer.Flywheel.flywheelOn();
-
+  public void execute() {
   }
 
   // Called once the command ends or is interrupted.
