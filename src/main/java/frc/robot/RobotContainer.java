@@ -15,10 +15,21 @@ import frc.robot.commands.Tank_Drive_Command;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 
+//SUBSYSTEM
 import frc.robot.subsystems.Drive_Train_Subsystem;
 import frc.robot.subsystems.Flywheel_Subsystem;
 import frc.robot.subsystems.Hook_Subsystem;
 import frc.robot.subsystems.Intake_Subsystem;
+import frc.robot.subsystems.Spinner_Subsystem;
+
+/*
+//Color Sensor
+import edu.wpi.first.wpilibj.I2C;
+import edu.wpi.first.wpilibj.util.Color;
+import com.revrobotics.ColorSensorV3;
+import com.revrobotics.ColorMatchResult;
+import com.revrobotics.ColorMatch;
+*/
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -35,9 +46,8 @@ public class RobotContainer {
   public static Flywheel_Subsystem Flywheel;
   public static Hook_Subsystem Hook;
   public static Intake_Subsystem Intake;
-
-
-
+  public static Spinner_Subsystem Spinner;
+  
 
   static Joystick stick0;
 
@@ -51,6 +61,9 @@ public class RobotContainer {
     Flywheel   = new Flywheel_Subsystem();
     Intake     = new Intake_Subsystem();
 
+  
+  
+  
 
     // Configure the button bindings
     configureButtonBindings();

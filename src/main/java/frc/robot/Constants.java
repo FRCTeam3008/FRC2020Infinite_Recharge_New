@@ -33,6 +33,8 @@ public final class Constants {
   public static int Spark10ID = 10;
   public static int Spark11ID = 11;
   public static int Spark12ID = 12;
+  public static int Spark13ID = 13;
+
   
   //left motor ID
   public static int MotorL1ID = 1;

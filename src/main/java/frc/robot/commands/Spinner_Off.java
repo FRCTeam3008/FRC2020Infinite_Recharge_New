@@ -10,13 +10,12 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 
-
-public class Intake_On extends CommandBase {
+public class Spinner_Off extends CommandBase {
   /**
-   * Creates a new Intake_On.
+   * Creates a new Spinner_Turn.
    */
-  public Intake_On() {
-    addRequirements(RobotContainer.Intake);
+  public Spinner_Off() {
+    addRequirements(RobotContainer.Spinner);
   }
 
   // Called when the command is initially scheduled.
@@ -28,7 +27,7 @@ public class Intake_On extends CommandBase {
   @Override
   public void execute() 
   {
-    RobotContainer.Intake.intakeOn();
+    RobotContainer.Spinner.spinnerOff();
   }
 
   // Called once the command ends or is interrupted.
