@@ -24,7 +24,7 @@ public class Spinner_Position_To_Color extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    RobotContainer.spinner.findColor();
+    RobotContainer.spinner.storeColor();
   }
 
   // Called every time the scheduler runs while the command is scheduled.

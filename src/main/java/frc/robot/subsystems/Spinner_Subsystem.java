@@ -22,6 +22,7 @@ import com.revrobotics.ColorMatch;
 public class Spinner_Subsystem extends SubsystemBase {
   private final CANSparkMax spinnerSparkMax;
   public String colorString;
+  public String updatedColor;
 
   public Spinner_Subsystem() {
     spinnerSparkMax = new CANSparkMax(5, MotorType.kBrushed); //change deviceID
@@ -40,21 +41,25 @@ public class Spinner_Subsystem extends SubsystemBase {
   private final Color kRedTarget = ColorMatch.makeColor(0.41, 0.40, 0.18); //0.561, 0.232, 0.114
   private final Color kYellowTarget = ColorMatch.makeColor(0.32, 0.524, 0.14); //0.361, 0.524, 0.113
 
-  public void findColor() 
-  {
-    //color sensor - attaches an english color to an RGB value
-    colorMatcher.addColorMatch(kBlueTarget);
-    colorMatcher.addColorMatch(kGreenTarget);
-    colorMatcher.addColorMatch(kRedTarget);
-    colorMatcher.addColorMatch(kYellowTarget);  
-  }
-
-  public void spinnerOn()
+  /*public void spinnerOn()
   {
     if (colorString == "Blue") {
       spinnerSparkMax.set(0);
     } else {
       spinnerSparkMax.set(0.5);
+    }
+  }*/
+
+  public void storeColor() {
+    updatedColor = colorString;
+  }
+  
+  public void spinnerOn()
+  {
+    if (updatedColor == colorString) {
+      spinnerSparkMax.set(0.5);
+    } else {
+      spinnerSparkMax.set(0);
     }
   }
 
@@ -64,7 +69,7 @@ public class Spinner_Subsystem extends SubsystemBase {
     colorMatcher.addColorMatch(kBlueTarget);
     colorMatcher.addColorMatch(kGreenTarget);
     colorMatcher.addColorMatch(kRedTarget);
-    colorMatcher.addColorMatch(kYellowTarget);  
+    colorMatcher.addColorMatch(kYellowTarget);
     
     Color detectedColor = testColorSensor.getColor();
     double IR = testColorSensor.getIR();
