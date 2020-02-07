@@ -10,11 +10,11 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 
-public class Spinner_Full_Rotation extends CommandBase {
+public class Spinner_Half_Rotation extends CommandBase {
   /**
-   * Creates a new Spinner_Full_Rotation.
+   * Creates a new Spinner_Half_Rotation.
    */
-  public Spinner_Full_Rotation() {
+  public Spinner_Half_Rotation() {
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(RobotContainer.spinner);
   }
@@ -28,6 +28,8 @@ public class Spinner_Full_Rotation extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    RobotContainer.spinner.printValues();
+    RobotContainer.spinner.spinnerHalfRotation();
   }
 
   // Called once the command ends or is interrupted.

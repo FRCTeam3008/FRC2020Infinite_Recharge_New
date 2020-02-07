@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.Spinner_Half_Rotation;
 import frc.robot.commands.Spinner_Position_To_Color;
 import frc.robot.commands.Tank_Drive_Command;
 import frc.robot.subsystems.ExampleSubsystem;
@@ -59,8 +60,10 @@ public class RobotContainer {
     DriveTrain.setDefaultCommand(new Tank_Drive_Command());
 
     final JoystickButton ButtonB = new JoystickButton(stick0, 2);
+    final JoystickButton ButtonA = new JoystickButton(stick0, 1);
 
     ButtonB.whileHeld(new Spinner_Position_To_Color());
+    ButtonA.whileHeld(new Spinner_Half_Rotation());
   }
 
   public static double getLeftStickY()

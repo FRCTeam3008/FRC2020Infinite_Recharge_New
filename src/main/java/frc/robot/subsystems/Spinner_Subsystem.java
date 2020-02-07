@@ -23,6 +23,7 @@ public class Spinner_Subsystem extends SubsystemBase {
   private final CANSparkMax spinnerSparkMax;
   public String colorString;
   public String updatedColor;
+  public int colorInteger;
 
   public Spinner_Subsystem() {
     spinnerSparkMax = new CANSparkMax(5, MotorType.kBrushed); //change deviceID
@@ -41,22 +42,32 @@ public class Spinner_Subsystem extends SubsystemBase {
   private final Color kRedTarget = ColorMatch.makeColor(0.41, 0.40, 0.18); //0.561, 0.232, 0.114
   private final Color kYellowTarget = ColorMatch.makeColor(0.32, 0.524, 0.14); //0.361, 0.524, 0.113
 
-  /*public void spinnerOn()
-  {
-    if (colorString == "Blue") {
-      spinnerSparkMax.set(0);
-    } else {
-      spinnerSparkMax.set(0.5);
-    }
-  }*/
-
   public void storeColor() {
     updatedColor = colorString;
+    colorInteger = 0;
   }
   
-  public void spinnerOn()
+  public void spinnerIncrement()
   {
     if (updatedColor == colorString) {
+      spinnerSparkMax.set(0.5);
+    } else {
+      spinnerSparkMax.set(0);
+    }
+  }
+
+  public void printValues() {
+    System.out.println("updatedColor: " + updatedColor);
+    System.out.println("colorString: " + colorString);
+  }
+
+  //work in progress
+  public void spinnerHalfRotation() {
+    if (updatedColor != colorString) {
+      colorInteger++;
+      updatedColor = colorString;
+    } 
+    if (colorInteger < 4) {
       spinnerSparkMax.set(0.5);
     } else {
       spinnerSparkMax.set(0);
