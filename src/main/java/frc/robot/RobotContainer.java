@@ -15,7 +15,12 @@ import frc.robot.commands.Tank_Drive_Command;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 
+//SUBSYSTEM
 import frc.robot.subsystems.Drive_Train_Subsystem;
+import frc.robot.subsystems.Flywheel_Subsystem;
+import frc.robot.subsystems.Hook_Subsystem;
+import frc.robot.subsystems.Intake_Subsystem;
+import frc.robot.subsystems.Spinner_Subsystem;
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -24,11 +29,16 @@ import frc.robot.subsystems.Drive_Train_Subsystem;
  * (including subsystems, commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
-  // The robot's subsystems and commands are defined here...
+  //public static final String Hook = null;
+// The robot's subsystems and commands are defined here...
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
   public static Drive_Train_Subsystem DriveTrain;
-
+  public static Flywheel_Subsystem Flywheel;
+  public static Hook_Subsystem Hook;
+  public static Intake_Subsystem Intake;
+  public static Spinner_Subsystem Spinner;
+  
 
   static Joystick stick0;
 
@@ -38,6 +48,11 @@ public class RobotContainer {
    */
   public RobotContainer() {
     DriveTrain = new Drive_Train_Subsystem();
+    Spinner = new Spinner_Subsystem();
+    Hook       = new Hook_Subsystem();
+    Flywheel   = new Flywheel_Subsystem();
+    Intake     = new Intake_Subsystem();
+
     // Configure the button bindings
     configureButtonBindings();
     

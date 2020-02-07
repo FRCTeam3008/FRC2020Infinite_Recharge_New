@@ -24,6 +24,17 @@ public final class Constants {
   public static int Spark1ID = 0;
   public static int Spark2ID = 1;
   public static int Spark3ID = 2;
+  public static int Spark4ID = 4;
+  public static int Spark5ID = 5;
+  public static int Spark6ID = 6;
+  public static int Spark7ID = 7;
+  public static int Spark8ID = 8;
+  public static int Spark9ID = 9;
+  public static int Spark10ID = 10;
+  public static int Spark11ID = 11;
+  public static int Spark12ID = 12;
+  public static int Spark13ID = 13;
+
   
   //left motor ID
   public static int MotorL1ID = 1;
