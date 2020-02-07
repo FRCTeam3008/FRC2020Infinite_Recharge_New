@@ -22,15 +22,6 @@ import frc.robot.subsystems.Hook_Subsystem;
 import frc.robot.subsystems.Intake_Subsystem;
 import frc.robot.subsystems.Spinner_Subsystem;
 
-/*
-//Color Sensor
-import edu.wpi.first.wpilibj.I2C;
-import edu.wpi.first.wpilibj.util.Color;
-import com.revrobotics.ColorSensorV3;
-import com.revrobotics.ColorMatchResult;
-import com.revrobotics.ColorMatch;
-*/
-
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -57,13 +48,10 @@ public class RobotContainer {
    */
   public RobotContainer() {
     DriveTrain = new Drive_Train_Subsystem();
+    Spinner = new Spinner_Subsystem();
     Hook       = new Hook_Subsystem();
     Flywheel   = new Flywheel_Subsystem();
     Intake     = new Intake_Subsystem();
-
-  
-  
-  
 
     // Configure the button bindings
     configureButtonBindings();

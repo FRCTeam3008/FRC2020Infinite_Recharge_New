@@ -12,7 +12,7 @@ import frc.robot.RobotContainer;
 
 public class Spinner_Position_To_Color extends CommandBase {
   /**
-   * Creates a new Spinner_Turn.
+   * Creates a new Spinner_Position_To_Color.
    */
   public Spinner_Position_To_Color() {
     addRequirements(RobotContainer.Spinner);
@@ -27,7 +27,6 @@ public class Spinner_Position_To_Color extends CommandBase {
   @Override
   public void execute() 
   {
-    RobotContainer.Spinner.positionToColor();
   }
 
   // Called once the command ends or is interrupted.

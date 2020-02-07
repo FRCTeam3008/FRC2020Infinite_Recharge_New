@@ -17,26 +17,12 @@ public class Spinner_Subsystem extends SubsystemBase {
   /**
    * Creates a new Spinner_Subsystem.
    */
-  private CANSparkMax Spinner;
+  private final CANSparkMax spinnerSparkMax;
   public Spinner_Subsystem()
   {
-    Spinner = new CANSparkMax(Constants.Spark13ID, MotorType.kBrushless);
+    spinnerSparkMax = new CANSparkMax(Constants.Spark13ID, MotorType.kBrushless);
   }
 
-  public void spinnerOff()
-  {
-    Spinner.set(0.0);
-  }
-
-  public void spinnerTurn()
-  {
-    Spinner.set(1.0);
-  }
-
-  public void positionToColor()
-  {
-   
-  }
 
   @Override
   public void periodic() {
