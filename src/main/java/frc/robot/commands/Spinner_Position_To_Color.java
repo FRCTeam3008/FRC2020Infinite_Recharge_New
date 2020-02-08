@@ -21,12 +21,14 @@ public class Spinner_Position_To_Color extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+    RobotContainer.Spinner.storeColor();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() 
   {
+    RobotContainer.Spinner.spinnerIncrement();
   }
 
   // Called once the command ends or is interrupted.
