@@ -16,20 +16,19 @@ public class Spinner_Half_Rotation extends CommandBase {
    */
   public Spinner_Half_Rotation() {
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(RobotContainer.spinner);
+    addRequirements(RobotContainer.Spinner);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    RobotContainer.spinner.storeColor();
+    RobotContainer.Spinner.storeColor();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    RobotContainer.spinner.printValues();
-    RobotContainer.spinner.spinnerHalfRotation();
+    RobotContainer.Spinner.spinnerHalfRotation();
   }
 
   // Called once the command ends or is interrupted.

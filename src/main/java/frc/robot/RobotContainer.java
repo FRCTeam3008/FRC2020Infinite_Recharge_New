@@ -32,7 +32,7 @@ public class RobotContainer {
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
   public static Drive_Train_Subsystem DriveTrain;
-  public static Spinner_Subsystem spinner;
+  public static Spinner_Subsystem Spinner;
 
 
   static Joystick stick0;
@@ -43,7 +43,7 @@ public class RobotContainer {
    */
   public RobotContainer() {
     DriveTrain = new Drive_Train_Subsystem();
-    spinner = new Spinner_Subsystem();
+    Spinner = new Spinner_Subsystem();
     // Configure the button bindings
     configureButtonBindings();
     

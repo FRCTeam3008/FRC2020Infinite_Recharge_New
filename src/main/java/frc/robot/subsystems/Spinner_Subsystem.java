@@ -56,12 +56,6 @@ public class Spinner_Subsystem extends SubsystemBase {
     }
   }
 
-  public void printValues() {
-    System.out.println("updatedColor: " + updatedColor);
-    System.out.println("colorString: " + colorString);
-  }
-
-  //work in progress
   public void spinnerHalfRotation() {
     if (updatedColor != colorString) {
       colorInteger++;

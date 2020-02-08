@@ -18,19 +18,19 @@ public class Spinner_Position_To_Color extends CommandBase {
    */
   public Spinner_Position_To_Color() {
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(RobotContainer.spinner);
+    addRequirements(RobotContainer.Spinner);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    RobotContainer.spinner.storeColor();
+    RobotContainer.Spinner.storeColor();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    RobotContainer.spinner.spinnerIncrement();
+    RobotContainer.Spinner.spinnerIncrement();
   }
 
   // Called once the command ends or is interrupted.
