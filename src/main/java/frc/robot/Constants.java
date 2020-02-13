@@ -37,13 +37,13 @@ public final class Constants {
 
   
   //left motor ID
-  public static int MotorL1ID = 1;
-  public static int MotorL2ID = 3;
+  public static int MotorL1ID = 6;
+  public static int MotorL2ID = 9;
   public static int MotorL3ID = 5;
 
   //right motor ID
-  public static int MotorR1ID = 0;
-  public static int MotorR2ID = 2;
+  public static int MotorR1ID = 7;
+  public static int MotorR2ID = 11;
   public static int MotorR3ID = 4;
 
   //letter buttons on right

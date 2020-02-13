@@ -17,24 +17,22 @@ public class Intake_Subsystem extends SubsystemBase {
    * Creates a new Intake.
    */
   private CANSparkMax IntakeR;
-  private CANSparkMax IntakeL;
+  //private CANSparkMax IntakeL;
    public Intake_Subsystem() 
   {
-    IntakeL = new CANSparkMax(Constants.Spark7ID, MotorType.kBrushless);
-    IntakeR = new CANSparkMax(Constants.Spark8ID, MotorType.kBrushless);
+    //IntakeL = new CANSparkMax(Constants.Spark10ID, MotorType.kBrushless);
+    IntakeR = new CANSparkMax(Constants.Spark12ID, MotorType.kBrushless);
 
   }
 
-  public void intakeOff()
-  {
-    IntakeL.set(0.0);
+  public void intakeOff() {    
     IntakeR.set(0.0);
   }
-
+  
   public void intakeOn()
   {
-    IntakeL.set(1.0);
-    IntakeR.set(1.0);
+    //IntakeL.set(1.0);
+    IntakeR.set(0.4);
   }
 
   @Override

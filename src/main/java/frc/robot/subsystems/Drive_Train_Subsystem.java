@@ -27,16 +27,16 @@ public class Drive_Train_Subsystem extends SubsystemBase {
   // Create 6 motors for drivetrain
   public Drive_Train_Subsystem()
   {
-    //MotorR1 = new CANSparkMax(Constants.MotorR1ID, MotorType.kBrushless);
+    MotorR1 = new CANSparkMax(Constants.MotorR1ID, MotorType.kBrushless);
     MotorR2 = new CANSparkMax(Constants.MotorR2ID, MotorType.kBrushless);
-    MotorR3 = new CANSparkMax(Constants.MotorR3ID, MotorType.kBrushless);
+    //MotorR3 = new CANSparkMax(Constants.MotorR3ID, MotorType.kBrushless);
   
     MotorL1 = new CANSparkMax(Constants.MotorL1ID, MotorType.kBrushless);
     MotorL2 = new CANSparkMax(Constants.MotorL2ID, MotorType.kBrushless);
-    MotorL3 = new CANSparkMax(Constants.MotorL3ID, MotorType.kBrushless);
+    //MotorL3 = new CANSparkMax(Constants.MotorL3ID, MotorType.kBrushless);
     
-    leftMotor = new SpeedControllerGroup(MotorL1, MotorL2, MotorL3);
-    rightMotor = new SpeedControllerGroup(MotorR2, MotorR3);
+    leftMotor = new SpeedControllerGroup(MotorL1, MotorL2);
+    rightMotor = new SpeedControllerGroup(MotorR2, MotorR1);
     diffDrive = new DifferentialDrive(leftMotor, rightMotor);
   }
 
@@ -44,15 +44,15 @@ public class Drive_Train_Subsystem extends SubsystemBase {
   {
     MotorL1.set(0);
     MotorL2.set(0);
-    MotorL3.set(0);
+   // MotorL3.set(0);
 
   //MotorR1.set(0);
    MotorR2.set(0);
-   MotorR3.set(0);
+   MotorR1.set(0);
   }
 
   public void tankDrive(double speedL, double speedR)
   {
-    diffDrive.tankDrive(speedL, speedR);
+    diffDrive.tankDrive(-speedL/2, -speedR/2);
   }
 }
