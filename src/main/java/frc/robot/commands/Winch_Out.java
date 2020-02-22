@@ -10,14 +10,13 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 
-
-public class Hook_Winch_Reverse extends CommandBase {
+public class Winch_Out extends CommandBase {
   /**
-   * Creates a new Flywheel_Off.
+   * Creates a new Flywheel_On.
    */
-  public Hook_Winch_Reverse() 
+  public Winch_Out() 
   {
-    addRequirements(RobotContainer.Hook);
+    addRequirements(RobotContainer.Winch);
   }
 
   // Called when the command is initially scheduled.
@@ -29,13 +28,14 @@ public class Hook_Winch_Reverse extends CommandBase {
   @Override
   public void execute() 
   {
-    RobotContainer.Hook.winchReverse();
+    RobotContainer.Winch.winchOut();
+
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted)
-  {
+  public void end(boolean interrupted) {
+    RobotContainer.Winch.winchOff();
   }
 
   // Returns true when the command should end.

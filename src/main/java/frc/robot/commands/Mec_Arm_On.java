@@ -11,12 +11,12 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 
 
-public class Intake_On extends CommandBase {
+public class Mec_Arm_On extends CommandBase {
   /**
    * Creates a new Intake_On.
    */
-  public Intake_On() {
-    addRequirements(RobotContainer.Intake);
+  public Mec_Arm_On() {
+    addRequirements(RobotContainer.MecArm);
   }
 
   // Called when the command is initially scheduled.
@@ -28,13 +28,12 @@ public class Intake_On extends CommandBase {
   @Override
   public void execute() 
   {
-    RobotContainer.Intake.intakeOn();
+    RobotContainer.MecArm.mecArmOn();
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.Intake.intakeOff();
   }
 
   // Returns true when the command should end.

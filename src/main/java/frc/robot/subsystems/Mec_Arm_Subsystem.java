@@ -7,35 +7,29 @@
 
 package frc.robot.subsystems;
 
-import frc.robot.Constants;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import edu.wpi.first.wpilibj.Spark;
+import frc.robot.Constants;
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
-public class Flywheel_Subsystem extends SubsystemBase {
+public class Mec_Arm_Subsystem extends SubsystemBase {
   /**
-   * Creates a new Flywheel_Subsystem.
+   * Creates a new Intake.
    */
-  private Spark flywheelFront;
-  private Spark flywheelBack;
+  private CANSparkMax intakeArm;
 
-  public Flywheel_Subsystem() 
+   public Mec_Arm_Subsystem() 
   {
-    flywheelFront = new Spark (Constants.FlywheelFrontSpark);
-    flywheelBack = new Spark (Constants.FlywheelBackSpark);
+    intakeArm = new CANSparkMax(Constants.ArmSparkMAX, MotorType.kBrushless);
   }
 
-  public void flywheelOn()
-  {
-    flywheelFront.set(-1.0);
-    flywheelBack.set(0.5);
-
+  public void mecArmOff() {    
+    intakeArm.set(0.0);
   }
-
-  public void flywheelOff()
+  
+  public void mecArmOn()
   {
-    flywheelFront.set(0.0);
-    flywheelBack.set(0.0);
-
+    intakeArm.set(0.4);
   }
 
   @Override

@@ -9,31 +9,36 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import edu.wpi.first.wpilibj.Spark;
 
-public class Intake_Subsystem extends SubsystemBase {
+public class Winch_Subsystem extends SubsystemBase {
   /**
-   * Creates a new Intake.
+   * Creates a new Hook_Subsystem.s
    */
-  private CANSparkMax IntakeR;
-  //private CANSparkMax IntakeL;
-   public Intake_Subsystem() 
-  {
-    //IntakeL = new CANSparkMax(Constants.Spark10ID, MotorType.kBrushless);
-    IntakeR = new CANSparkMax(Constants.Spark12ID, MotorType.kBrushless);
-
-  }
-
-  public void intakeOff() {    
-    IntakeR.set(0.0);
-  }
+  private Spark winchSpark;
   
-  public void intakeOn()
+
+  public Winch_Subsystem() 
   {
-    //IntakeL.set(1.0);
-    IntakeR.set(0.4);
+    winchSpark = new Spark(Constants.WinchSpark);
+
   }
+
+  public void winchOut()
+  {
+    winchSpark.set(1.0);
+  }
+
+  public void winchIn()
+  {
+    winchSpark.set(-1.0);
+  }
+
+  public void winchOff()
+  {
+    winchSpark.set(0);
+  }
+
 
   @Override
   public void periodic() {

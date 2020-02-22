@@ -10,13 +10,13 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 
-public class Hook_Winch_Forward extends CommandBase {
+public class Winch_In extends CommandBase {
   /**
-   * Creates a new Flywheel_On.
+   * Creates a new Winch_In.
    */
-  public Hook_Winch_Forward() 
-  {
-    addRequirements(RobotContainer.Hook);
+  public Winch_In() {
+    // Use addRequirements() here to declare subsystem dependencies.
+    addRequirements(RobotContainer.Winch);
   }
 
   // Called when the command is initially scheduled.
@@ -26,15 +26,14 @@ public class Hook_Winch_Forward extends CommandBase {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() 
-  {
-    RobotContainer.Hook.winchForward();
-
+  public void execute() {
+    RobotContainer.Winch.winchIn();
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
+    RobotContainer.Winch.winchOff();
   }
 
   // Returns true when the command should end.

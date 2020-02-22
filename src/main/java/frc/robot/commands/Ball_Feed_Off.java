@@ -10,13 +10,13 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 
-public class Flywheel_Off extends CommandBase {
+public class Ball_Feed_Off extends CommandBase {
   /**
-   * Creates a new Flywheel_On.
+   * Creates a new Ball_Feed_Off.
    */
-  public Flywheel_Off() {
+  public Ball_Feed_Off() {
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(RobotContainer.Flywheel);
+    addRequirements(RobotContainer.BallFeed);
   }
 
   // Called when the command is initially scheduled.
@@ -26,11 +26,10 @@ public class Flywheel_Off extends CommandBase {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() 
-  {
-    RobotContainer.Flywheel.flywheelOff();
-
+  public void execute() {
+    RobotContainer.BallFeed.ballFeedOff();
   }
+
 
   // Called once the command ends or is interrupted.
   @Override
@@ -40,6 +39,6 @@ public class Flywheel_Off extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return false;
+    return true;
   }
 }

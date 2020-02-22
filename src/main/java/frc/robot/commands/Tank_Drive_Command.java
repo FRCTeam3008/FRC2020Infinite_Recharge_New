@@ -8,6 +8,7 @@ public class Tank_Drive_Command extends CommandBase {
    * Creates a new Tank_Drive_Command.
    */
   public double stickL, stickR;
+  
   public Tank_Drive_Command() {
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(RobotContainer.DriveTrain);

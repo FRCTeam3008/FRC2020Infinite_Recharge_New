@@ -8,44 +8,28 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj.Spark;
 import frc.robot.Constants;
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
-
-public class Hook_Subsystem extends SubsystemBase {
+public class Ball_Feed_Subsystem extends SubsystemBase {
   /**
-   * Creates a new Hook_Subsystem.
+   * Creates a new Ball_Feed_Subsystem.
    */
-  private CANSparkMax HookR;
-  private CANSparkMax HookL;
+  private Spark ballFeedSpark;
 
-  public Hook_Subsystem() 
-  {
-    HookL = new CANSparkMax(Constants.Spark11ID, MotorType.kBrushless);
-    HookR = new CANSparkMax(Constants.Spark12ID, MotorType.kBrushless);
-
+  public Ball_Feed_Subsystem() {
+    ballFeedSpark = new Spark(Constants.BallFeedSpark);
   }
 
-
-  public void hookRelease()
+  public void ballFeedOn()
   {
+    ballFeedSpark.set(-.5);
   }
 
-  public void winchForward()
+  public void ballFeedOff()
   {
+    ballFeedSpark.set(0);
   }
-
-  public void winchOff()
-  {
-    HookL.set(0.0);
-    HookR.set(0.0);
-  }
-
-  public void winchReverse()
-  {
-  }
-
 
   @Override
   public void periodic() {

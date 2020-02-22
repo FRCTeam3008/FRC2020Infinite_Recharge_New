@@ -19,7 +19,7 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 public class Drive_Train_Subsystem extends SubsystemBase {
-  private CANSparkMax MotorR1, MotorR2, MotorR3, MotorL1, MotorL2, MotorL3;
+  private CANSparkMax motorR1, motorR2, motorL1, motorL2;
 
   public DifferentialDrive diffDrive;
   private SpeedControllerGroup leftMotor, rightMotor;
@@ -27,32 +27,28 @@ public class Drive_Train_Subsystem extends SubsystemBase {
   // Create 6 motors for drivetrain
   public Drive_Train_Subsystem()
   {
-    MotorR1 = new CANSparkMax(Constants.MotorR1ID, MotorType.kBrushless);
-    MotorR2 = new CANSparkMax(Constants.MotorR2ID, MotorType.kBrushless);
-    //MotorR3 = new CANSparkMax(Constants.MotorR3ID, MotorType.kBrushless);
-  
-    MotorL1 = new CANSparkMax(Constants.MotorL1ID, MotorType.kBrushless);
-    MotorL2 = new CANSparkMax(Constants.MotorL2ID, MotorType.kBrushless);
-    //MotorL3 = new CANSparkMax(Constants.MotorL3ID, MotorType.kBrushless);
+    //declare motors
+    motorR1 = new CANSparkMax(Constants.MotorR1ID, MotorType.kBrushless);
+    motorR2 = new CANSparkMax(Constants.MotorR2ID, MotorType.kBrushless);  
+    motorL1 = new CANSparkMax(Constants.MotorL1ID, MotorType.kBrushless);
+    motorL2 = new CANSparkMax(Constants.MotorL2ID, MotorType.kBrushless);
     
-    leftMotor = new SpeedControllerGroup(MotorL1, MotorL2);
-    rightMotor = new SpeedControllerGroup(MotorR2, MotorR1);
+    //create differential drive
+    leftMotor = new SpeedControllerGroup(motorL1, motorL2);
+    rightMotor = new SpeedControllerGroup(motorR2, motorR1);
     diffDrive = new DifferentialDrive(leftMotor, rightMotor);
   }
 
   public void driveOff()
   {
-    MotorL1.set(0);
-    MotorL2.set(0);
-   // MotorL3.set(0);
-
-  //MotorR1.set(0);
-   MotorR2.set(0);
-   MotorR1.set(0);
+    motorL1.set(0);
+    motorL2.set(0);
+    motorR2.set(0);
+    motorR1.set(0);
   }
 
   public void tankDrive(double speedL, double speedR)
   {
-    diffDrive.tankDrive(-speedL/2, -speedR/2);
+    diffDrive.tankDrive(-speedL, -speedR);
   }
 }
