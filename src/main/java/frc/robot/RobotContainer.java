@@ -87,7 +87,7 @@ public class RobotContainer {
     final JoystickButton LBumper = new JoystickButton(stick0, Constants.LBumper);
 
     //LBumper.whileHeld(new Ball_Feed_On());
-    //RBumper.whileHeld(new Flywheel_On());
+    LBumper.whileHeld(new Intake_CommandGroup());
     RBumper.whileHeld(new Shoot_CommandGroup());
     ButtonX.whileHeld(new Winch_In());
     ButtonY.whileHeld(new Winch_Out());
