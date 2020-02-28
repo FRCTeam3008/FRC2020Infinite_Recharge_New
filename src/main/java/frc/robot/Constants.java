@@ -20,28 +20,12 @@ public final class Constants {
   //Joystick port
   public static int JoystickPort = 0;
 
-  //spark motor PWM ID
-  public static int Spark1ID = 0;
-  public static int Spark2ID = 1;
-  public static int Spark3ID = 2;
-  public static int Spark4ID = 4; //Flywheel Back
-  public static int Spark5ID = 15; //Flywheel Front
-  public static int Spark6ID = 6;
-  public static int Spark7ID = 7;
-  public static int Spark8ID = 8;
-  public static int Spark9ID = 9;
-  public static int Spark10ID = 10;
-  public static int Spark11ID = 11;
-  public static int Spark12ID = 12; //Winch
-  public static int Spark13ID = 13;
-
   //Sparks
   public static int WinchSpark = 6;
   public static int FlywheelFrontSpark = 8;
   public static int FlywheelBackSpark = 7;
-  public static int BallFeedSpark = 9; //should be 9
+  public static int BallFeedSpark = 9;
   public static int ArmSparkMAX = 10;
-  
   
   //left motor ID
   public static int MotorL1ID = 6;

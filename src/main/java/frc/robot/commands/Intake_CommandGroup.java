@@ -19,7 +19,7 @@ public class Intake_CommandGroup extends ParallelCommandGroup {
   public Intake_CommandGroup() {
     // Add your commands in the super() call, e.g.
     // super(new FooCommand(), new BarCommand());
-    super(new Ball_Feed_On());
+    super(new Ball_Feed_On(), new Mec_Arm_On());
 
   }
 }

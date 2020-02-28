@@ -17,7 +17,7 @@ import frc.robot.commands.Flywheel_On;
 import frc.robot.commands.Intake_CommandGroup;
 import frc.robot.commands.Spinner_Half_Rotation;
 import frc.robot.commands.Spinner_Position_To_Color;
-import frc.robot.commands.Mec_Arm_On;
+import frc.robot.commands.Mec_Arm_Back;
 import frc.robot.commands.Shoot_CommandGroup;
 import frc.robot.commands.Winch_In;
 import frc.robot.commands.Winch_Out;
@@ -57,11 +57,11 @@ public class RobotContainer {
    */
   public RobotContainer() {
     DriveTrain = new Drive_Train_Subsystem();
-    Spinner = new Spinner_Subsystem();
-    Winch = new Winch_Subsystem();
-    Flywheel = new Flywheel_Subsystem();
-    MecArm = new Mec_Arm_Subsystem();
-    BallFeed = new Ball_Feed_Subsystem();
+    Spinner    = new Spinner_Subsystem();
+    Winch      = new Winch_Subsystem();
+    Flywheel   = new Flywheel_Subsystem();
+    MecArm     = new Mec_Arm_Subsystem();
+    BallFeed   = new Ball_Feed_Subsystem();
 
     // Configure the button bindings
     configureButtonBindings();
@@ -91,6 +91,7 @@ public class RobotContainer {
     RBumper.whileHeld(new Shoot_CommandGroup());
     ButtonX.whileHeld(new Winch_In());
     ButtonY.whileHeld(new Winch_Out());
+    ButtonA.whileHeld(new Mec_Arm_Back());
 
     // set default commands
     DriveTrain.setDefaultCommand(new Tank_Drive_Command());

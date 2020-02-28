@@ -29,7 +29,12 @@ public class Mec_Arm_Subsystem extends SubsystemBase {
   
   public void mecArmOn()
   {
-    intakeArm.set(-0.1);
+    intakeArm.set(-0.12);
+  }
+
+  public void mecArmBack()
+  {
+    intakeArm.set(0.12);
   }
 
   @Override
